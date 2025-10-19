@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 信用卡看板</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container login-container">
+        <div id="auth-form">
+            <h1 id="form-title">登录</h1>
+            <div class="input-group">
+                <label for="username">用户名</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button id="submit-btn">登录</button>
+            <p id="error-message" class="error-message"></p>
+            <p class="toggle-auth">
+                <span id="toggle-text">还没有账户？</span>
+                <a href="#" id="toggle-link">立即注册</a>
+            </p>
+        </div>
+    </div>
+    <script src="auth-ui.js"></script>
+</body>
+</html>

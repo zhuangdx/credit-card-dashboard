@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信用卡免息期看板</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header-bar">
+            <div id="user-info"></div>
+            <button id="logout-btn">登出</button>
+        </div>
+
+        <h1>信用卡免息期看板</h1>
+        
+        <h2>我的信用卡</h2>
+        <div id="card-inputs">
+            <!-- Card inputs will be dynamically generated here -->
+        </div>
+        <button id="add-card">添加信用卡</button>
+        <hr>
+
+        <div id="results-container">
+            <h2>今日消费免息期排行</h2>
+            <p>如果今天消费，使用不同卡的免息情况如下 (按时长排序):</p>
+            <table id="results-table">
+                <thead>
+                    <tr>
+                        <th>信用卡</th>
+                        <th>预计还款日</th>
+                        <th>免息期 (天)</th>
+                        <th>当前账单金额</th>
+                        <th>未出账金额</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Real-time results will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
+        
+        <div class="data-import-section">
+            <h2>数据迁移</h2>
+            <p>将您之前导出的 `credit_cards_export.json` 文件导入到当前账户。</p>
+            <input type="file" id="import-file-input" accept=".json">
+            <button id="import-btn">导入数据</button>
+        </div>
+
+        <hr>
+
+        <div class="what-if-scenario">
+            <h2>“如果...”场景计算</h2>
+            <p>计算在特定日期消费的免息期。</p>
+            <label for="transaction-date">选择一个消费日期:</label>
+            <input type="date" id="transaction-date">
+            <button id="calculate-specific-date">计算该日期的免息期</button>
+            <div id="specific-results-container" style="display:none;">
+                <h3>特定日期计算结果</h3>
+                <table id="specific-results-table">
+                    <thead>
+                        <tr>
+                            <th>信用卡</th>
+                            <th>还款日</th>
+                            <th>免息期 (天)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Specific date results will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
